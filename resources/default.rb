@@ -99,6 +99,7 @@ action :install do
 
   template '/etc/profile.d/golang.sh' do
     source 'golang.sh.erb'
+    cookbook 'golang'
     mode new_resource.directory_mode
     variables gobin: new_resource.gobin,
               gopath:  new_resource.gobin,
